@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <br />
+
+      {% csrf_token %}
+      <br />
+      {% for field in form %} <br />{{ field.label }}<br /><br />
+      {{ field }}
+      <br />
+      <br />
+      {{ field.errors }} {% endfor %}
+      <br />
+      <button type="submit">Sign up</button>
+      <br />
+      <a href="/login">Make Acount</a>
+      <br />
+    </form>
+    {% if error %} {{error}} {% endif %}
+  </body>
+</html>
